@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Capture Moments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #c37ba7;
+            --secondary: #ffe0b2;
+            --dark: #2b1b2f;
+            --light: #fff4f0; /* Light peach */
+            --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        .navbar {
+            height: 60px;
+        }
+
+        .hero {
+            height: 60vh;
+            background: var(--light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-text {
+            color: var(--dark);
+        }
+
+        .hero-text h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        section h2 {
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+
+        section p {
+            line-height: 1.9;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .values, .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .value-card, .member {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform .25s;
+        }
+
+        .value-card:hover, .member:hover {
+            transform: translateY(-6px);
+        }
+
+        .value-card span {
+            font-size: 2.5em;
+            display: block;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .member h3 {
+            margin: 12px 0 4px;
+            color: var(--primary);
+        }
+
+        .member p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 14px;
+        }
+
+        .timeline {
+            margin-top: 30px;
+        }
+
+        .milestone {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border-left: none;
+            border-radius: 6px;
+            position: relative;
+        }
+
+        .milestone::before {
+            content: '•';
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            color: var(--primary);
+            font-size: 2em;
+        }
+
+        .milestone h4 {
+            margin: 0 0 8px;
+            font-size: 1.2em;
+            color: var(--dark);
+        }
+
+        .milestone p {
+            font-size: 1em;
+            color: #555;
+            margin: 0;
+        }
+
+        .cta {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-top: 50px;
+            box-shadow: var(--shadow);
+        }
+
+        .cta h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .cta a:hover {
+            background: var(--secondary);
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .hero-text h1 {
+                font-size: 2.25em;
+            }
+            .hero-text p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar"></div>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>About Capture Moments</h1>
+            <p>Preserving your memories with elegance, warmth, and creativity.</p>
+        </div>
+    </header>
+
+    <section>
+        <h2>Our Story</h2>
+        <p>Capture Moments was founded with one mission: to bring timeless photography to every special occasion. From humble beginnings, we’ve evolved into a vibrant team of creators who believe in telling stories through the lens.</p>
+        <p>Whether it’s a wedding, a family session, or a milestone celebration, we bring passion and professionalism to every frame.</p>
+    </section>
+
+    <section>
+        <h2>What We Value</h2>
+        <div class="values">
+            <div class="value-card"><span>💖</span><strong>Empathy</strong><br>We connect emotionally to capture your real story.</div>
+            <div class="value-card"><span>📸</span><strong>Expertise</strong><br>Years of hands-on experience across genres.</div>
+            <div class="value-card"><span>✨</span><strong>Creativity</strong><br>Unique perspectives that make your photos shine.</div>
+            <div class="value-card"><span>🎨</span><strong>Authenticity</strong><br>No filters, just honest and heartfelt moments.</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/aboutps/alex.jpg') }}" alt="Alex Kapoor">
+                <h3>Alex Kapoor</h3>
+                <p>Founder & Creative Head</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/aboutps/sara.jpg') }}" alt="Sara Dsouza">
+                <h3>Sara Dsouza</h3>
+                <p>Operations Lead</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/aboutps/aarav.jpg') }}" alt="Aarav Reddy">
+                <h3>Aarav Reddy</h3>
+                <p>Technical Director</p>
+            </div>
+            <div class="member">
+                <img src="{{ url_for('static', filename='images/aboutps/rhea.jpg') }}" alt="Rhea Jain">
+                <h3>Rhea Jain</h3>
+                <p>Lead Photographer</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Milestones</h2>
+        <div class="timeline">
+            <div class="milestone">
+                <h4>2016 • Inception</h4>
+                <p>The vision of building a photography brand begins in Bangalore.</p>
+            </div>
+            <div class="milestone">
+                <h4>2019 • 500+ Events</h4>
+                <p>Successfully captured weddings, birthdays, and brand shoots across India.</p>
+            </div>
+            <div class="milestone">
+                <h4>2022 • Studio Launch</h4>
+                <p>Opened a state-of-the-art indoor studio space.</p>
+            </div>
+            <div class="milestone">
+                <h4>2025 • Pan-India Reach</h4>
+                <p>Serving clients in 20+ cities with a team of 80+ creators.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h3>Let’s Capture Your Special Day!</h3>
+        <p>From joyous weddings to candid portraits, our team is ready to preserve every emotion in its truest light.</p>
+        <a href="/book">Book Now</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Capture Moments. All Rights Reserved.</p>
+        <p>Contact: capturemoments@gmail.com | +91 7093602537</p>
+    </footer>
+</body>
+
+</html>

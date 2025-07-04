@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Photographer | Capture Moments</title>
+    <link rel="stylesheet" href="/static/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/static/css/inter-font.css">
+    <link rel="stylesheet" href="/static/css/playfair-font.css">
+    <style>
+        :root {
+            --primary: #6c757d;
+            --primary-light: #dee2e6;
+            --primary-dark: #495057;
+            --secondary: #ced4da;
+            --accent: #adb5bd;
+            --dark: #f1f3f5;
+            --light: #ffffff;
+            --gray: #868e96;
+            --transition: all 0.4s ease;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-dark);
+            background-color: var(--dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: url('/static/images/booking.jpg') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+
+        .features-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .booking-form-container {
+            flex: 1;
+            min-width: 350px;
+            background: var(--light);
+            padding: 35px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--secondary);
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary-dark);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--secondary);
+            border-radius: var(--radius);
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            font-size: 15px;
+            transition: var(--transition);
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            background: var(--light);
+            border-color: var(--primary);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+
+        .message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-text,
+            .booking-form-container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Book Your Perfect Photographer</h1>
+                <p class="hero-description">
+                    Capture your special moments with our professional photographers. Book in just a few clicks.
+                </p>
+                <ul class="features-list">
+                    <li>✔ 100+ Professional Photographers</li>
+                    <li>✔ Flexible Booking Options</li>
+                    <li>✔ Premium Quality Guaranteed</li>
+                    <li>✔ 24/7 Customer Support</li>
+                </ul>
+            </div>
+
+            <div class="booking-form-container">
+                {% with messages = get_flashed_messages(with_categories=true) %} 
+                    {% if messages %} 
+                        {% for category, message in messages %}
+                            <div class="message">{{ message }}</div>
+                        {% endfor %} 
+                    {% endif %} 
+                {% endwith %}
+
+                <h2>Booking Details</h2>
+
+                <form method="POST" action="/book">
+                    <div class="form-group">
+                        <label for="photographer_id">Photographer ID</label>
+                        <input type="text" id="photographer_id" name="photographer_id" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_id">Your User ID</label>
+                        <input type="text" id="user_id" name="user_id" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Booking Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Booking Price (₹)</label>
+                        <input type="number" id="price" name="price" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Location Details</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+
+                    <button type="submit">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+        });
+    </script>
+</body>
+
+</html>

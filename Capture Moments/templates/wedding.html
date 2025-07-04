@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wedding Photography | Capture Moments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --primary: #f4d35e; /* Mimosa Yellow */
+      --secondary: #ee964b; /* Mango Popsicle Orange */
+      --accent: #f95738; /* Sunset Orange */
+      --bg: linear-gradient(to right, #fff8e7, #ffe5b4);
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      --radius: 12px;
+      --transition: all 0.4s ease;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: #222; }
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%; z-index: 999;
+      background: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+    }
+    .navbar .logo {
+      font-size: 1.8rem;
+      font-family: Georgia, serif;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .navbar nav {
+      display: flex;
+      gap: 25px;
+    }
+    .navbar nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+      transition: var(--transition);
+    }
+    .navbar nav a:hover {
+      color: var(--accent);
+    }
+    .hero {
+      height: 90vh;
+      background: url('/static/images/weddingps/hero.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding-top: 80px;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero div { position: relative; z-index: 1; }
+    .hero h2 {
+      font-size: 3.5rem;
+      font-family: Georgia, serif;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+    .section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    .section h3 {
+      font-size: 2.5rem;
+      font-family: Georgia, serif;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .section p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 40px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h4 {
+      font-size: 1.3rem;
+      color: var(--secondary);
+      margin-bottom: 8px;
+    }
+    .card-content p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+    .quote {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(6px);
+      padding: 30px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+    }
+    .quote p {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    .quote span {
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .cta {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .cta h2 {
+      font-size: 2.2rem;
+      font-family: Georgia, serif;
+    }
+    .cta a {
+      display: inline-block;
+      background: white;
+      color: var(--accent);
+      margin-top: 20px;
+      padding: 15px 30px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+    .cta a:hover {
+      background: var(--secondary);
+      color: white;
+    }
+    footer {
+      background: #222;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.4rem; }
+      .navbar { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <a href="/" class="logo">Capture Moments</a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#styles">Styles</a>
+      <a href="#book">Book</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Wedding Photography</h2>
+      <p>Turning precious moments into timeless art</p>
+    </div>
+  </section>
+
+  <section class="section" id="styles">
+    <h3>Wedding Styles</h3>
+    <p>Cherished traditions and emotions captured with grace.</p>
+    <div class="gallery">
+      <div class="card">
+        <img src="/static/images/weddingps/hindu.jpg" alt="Hindu Wedding">
+        <div class="card-content">
+          <h4>Hindu Wedding</h4>
+          <p>Vibrant colors and deep rituals wrapped in love and legacy.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/static/images/weddingps/christian.jpg" alt="Christian Wedding">
+        <div class="card-content">
+          <h4>Christian Wedding</h4>
+          <p>Serene vows and elegant celebrations in sacred spaces.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/static/images/weddingps/muslim.jpg" alt="Muslim Wedding">
+        <div class="card-content">
+          <h4>Muslim Wedding</h4>
+          <p>Graceful Nikah moments and festive gatherings documented beautifully.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <h3>Client Applause</h3>
+    <div class="quote">
+      <p>"Each photograph made us relive our wedding emotions all over again! Thank you for the magic."</p>
+      <span>– Meera & Rahul</span>
+    </div>
+    <div class="quote">
+      <p>"Incredible talent and dedication. You made every frame count!"</p>
+      <span>– Sara Ahmed</span>
+    </div>
+  </section>
+
+  <section class="cta" id="book">
+    <h2>Let’s Capture Your Forever Moments</h2>
+    <p>Book your photographer today and preserve your love story for generations.</p>
+    <a href="/book">💍 Book Your Photographer</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Capture Moments. Elegance Preserved. Stories Celebrated.
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      navbar.style.boxShadow = window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,0.1)' : 'none';
+    });
+  </script>
+</body>
+</html>
