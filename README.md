@@ -39,6 +39,8 @@ This project solves that by providing:
 ---
 
 ## 🗂️ Folder Structure
+
+<pre>
 CaptureMomentsAWSProject/
 │
 ├── Capture Moments(Local Deployment)/    # Local testing version of the app
@@ -49,16 +51,17 @@ CaptureMomentsAWSProject/
 ├── Capture Moments/                      # Main cloud-deployed version
 │   ├── static/                           # Cloud version static files
 │   ├── templates/                        # Cloud version HTML templates
-│   └── awsint.py                         # AWS-integrated Flask app
+│   └── app.py                            # AWS-integrated Flask app
 │
 ├── Videos/                               # Demonstration and tutorial videos
 │
 ├── Document(CaptureMoments).docx         # Project documentation (ER, flow, etc.)
 │
-├── Google drive link                     # Plain text link to project drive (if needed)
+├── Google drive link                     # Plain text link to project drive
 │
-└── README.md                             # Project description file (you are reading this)
-
+└── README.md                             # Project description file
+  </pre>
+  
 ---
 
 ## 🧩 Features
