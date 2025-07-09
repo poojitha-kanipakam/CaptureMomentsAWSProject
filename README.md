@@ -1,7 +1,7 @@
 # CaptureMomentsAWSProject
 # 📸 Capture Moments - AWS Powered Photographer Booking System
 
-A cloud-based **Photographer Booking System** developed using **Flask**, **AWS EC2**, and **DynamoDB**. This project was built as part of the **SmartInternz Guided Project Program** in collaboration with **SmartBridge**.
+A cloud-based **Photographer Booking System** developed using **Flask**, **AWS EC2**, and **DynamoDB**. This project was built as part of the **SmartBridge Guided Project Program** in collaboration with **SmartInternz**.
 
 ---
 
@@ -9,7 +9,7 @@ A cloud-based **Photographer Booking System** developed using **Flask**, **AWS E
 
 - **Name**: Poojitha Kanipakam  
 - **Roll Number**: 22AK1A05A6  
-- **Internship Provider**: Smart Internz & SmartBridge  
+- **Internship Provider**: SmartBridge & Smart Internz 
 - **Project Name**: Capture Moments - AWS Powered Photographer Booking System
 
 ---
@@ -51,7 +51,7 @@ CaptureMomentsAWSProject/
 ├── Capture Moments/                      # Main cloud-deployed version
 │   ├── static/                           # Cloud version static files
 │   ├── templates/                        # Cloud version HTML templates
-│   └── awsint.py                            # AWS-integrated Flask app
+│   └── awsint.py                         # AWS-integrated Flask app
 │
 ├── Videos/                               # Demonstration and tutorial videos
 │
