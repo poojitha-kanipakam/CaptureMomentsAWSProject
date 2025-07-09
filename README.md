@@ -51,7 +51,7 @@ CaptureMomentsAWSProject/
 ├── Capture Moments/                      # Main cloud-deployed version
 │   ├── static/                           # Cloud version static files
 │   ├── templates/                        # Cloud version HTML templates
-│   └── app.py                            # AWS-integrated Flask app
+│   └── awsint.py                            # AWS-integrated Flask app
 │
 ├── Videos/                               # Demonstration and tutorial videos
 │
