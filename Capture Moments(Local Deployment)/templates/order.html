@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Orders</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('{{ url_for("static", filename="images/orders.jpg") }}') no-repeat center center fixed;
+            background-size: cover;
+            padding: 30px;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            margin: 20px auto;
+            width: 60%;
+            padding: 10px;
+            border-radius: 5px;
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            text-align: center;
+        }
+
+        .booking-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .booking-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photographer {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .booking-detail {
+            margin: 5px 0;
+            color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Booking Summary</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% if bookings %}
+    <div class="booking-container">
+        {% for b in bookings %}
+        <div class="booking-card">
+            <div class="photographer">
+                Photographer: {{ b.photographer.name if b.photographer else b.photographer_id }}
+            </div>
+            <div class="booking-detail">User ID: {{ b.user_id }}</div>
+            <div class="booking-detail">Date: {{ b.date }}</div>
+            <div class="booking-detail">Price: ₹{{ b.price }}</div>
+            <div class="booking-detail">Address: {{ b.address }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p style="text-align:center; color: white; font-weight: bold;">No bookings found.</p>
+    {% endif %}
+</body>
+</html>
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Capture Moments</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: #e6f0fa;
+      background-image: url('/static/images/loginp.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 40px;
+      width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid #d9e4f5;
+    }
+
+    .login-box h2 {
+      color: #1a4d80;
+      margin-bottom: 25px;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .user-box {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .user-box input {
+      width: 100%;
+      padding: 12px 10px;
+      background: #f7faff;
+      border: 1px solid #b5c9e2;
+      border-radius: 8px;
+      color: #1a1a1a;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .user-box label {
+      position: absolute;
+      top: -18px;
+      left: 10px;
+      font-size: 13px;
+      color: #1a4d80;
+      background: #e6f0fa;
+      padding: 0 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #1a73e8;
+      border: none;
+      border-radius: 30px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #155ab6;
+      box-shadow: 0 8px 16px rgba(26, 115, 232, 0.3);
+    }
+
+    .links {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .links a {
+      color: #1a73e8;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <input type="text" required>
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" required>
+        <label>Password</label>
+      </div>
+      <button type="submit">LOGIN</button>
+      <div class="links">
+        <a href="#">Forgot Password?</a>
+        <a href="/signup">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

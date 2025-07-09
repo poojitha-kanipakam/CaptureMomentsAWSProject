@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Baby Born Photography • Capture Moments</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4e91b5;
+      --accent: #e6f2fb; /* Light blue instead of pink */
+      --light: #d4ecf7;  /* Soft background blue */
+      --text: #0a434a;
+      --muted: #3b5f78;
+      --radius: 12px;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      --transition: all 0.3s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--primary);
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8em;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #fff;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(204, 238, 255, 0.6), rgba(204, 238, 255, 0.6));
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 40px 20px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      font-size: 3em;
+      color: #214e6d;
+    }
+
+    .hero p {
+      font-family: 'Brush Script MT', cursive;
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #36698c;
+    }
+
+    .section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section h3 {
+      font-size: 2.4em;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1.1em;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .card-content p {
+      font-size: 0.95em;
+      color: var(--muted);
+    }
+
+    .why-choose {
+      background: var(--accent);
+      padding: 80px 20px;
+      border-radius: var(--radius);
+      margin-top: 80px;
+    }
+
+    .why-choose h3 {
+      color: var(--primary);
+      font-size: 2.2rem;
+    }
+
+    .why-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .why-item {
+      background: white;
+      padding: 20px 20px 20px 40px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 240px;
+      position: relative;
+      transition: var(--transition);
+      border-left: 5px solid var(--primary);
+    }
+
+    .why-item::before {
+      content: "✔️";
+      position: absolute;
+      top: 18px;
+      left: 15px;
+      font-size: 1.1rem;
+    }
+
+    .why-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .why-item h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .why-item p {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    footer.footer {
+      background: #0e395c;
+      color: #eee;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 80px;
+    }
+
+    .footer a {
+      color: #eee;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .why-item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Capture Moments</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/book">Book Now</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Newborn Photography</h2>
+      <p>Soft. Precious. Timeless.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Celebrate New Beginnings</h3>
+    <p>We capture the earliest days of life with warmth and softness. From newborn portraits to baby showers, every photo is filled with emotion and light.</p>
+
+    <div class="gallery">
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/babyps/firstsmile.jpg') }}" alt="Newborn wrapped in blanket" />
+        <div class="card-content">
+          <h4>Angel’s Grin</h4>
+          <p>The beginning of countless giggles.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/babyps/mom.jpg') }}" alt="Mother holding baby" />
+        <div class="card-content">
+          <h4>Embrace of Comfort</h4>
+          <p>Wrapped in warmth, nurtured by love.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{{ url_for('static', filename='images/babyps/toes.jpg') }}" alt="Tiny baby feet" />
+        <div class="card-content">
+          <h4>Barefoot Bliss</h4>
+          <p>Pure innocence under every step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-choose">
+    <h3>Why Choose Us</h3>
+    <div class="why-list">
+      <div class="why-item">
+        <h4>Gentle Posing</h4>
+        <p>We handle your baby with utmost care and comfort.</p>
+      </div>
+      <div class="why-item">
+        <h4>Soft Lighting</h4>
+        <p>Perfect setup to highlight delicate skin tones and emotion.</p>
+      </div>
+      <div class="why-item">
+        <h4>Family Shots</h4>
+        <p>Capture the joy of siblings and family bonding moments.</p>
+      </div>
+      <div class="why-item">
+        <h4>Props Provided</h4>
+        <p>We bring cozy blankets, baskets, and cute costumes.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Capture Moments. All Rights Reserved.</p>
+    <div>
+      <a href="/">Home</a>
+      <a href="/contact">Contact</a>
+      <a href="/privacy">Privacy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
