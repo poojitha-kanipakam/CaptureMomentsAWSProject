@@ -40,13 +40,24 @@ This project solves that by providing:
 
 ## 🗂️ Folder Structure
 CaptureMomentsAWSProject/
-├── Capture Moments/ # Main Web Application
-├── Capture Moments(Local Deployment)/ # Local setup for testing
-├── Videos/ # Project explanation and demo videos
-├── Document(CaptureMoments).docx # Project report and documents
-├── Google drive link # Backup and video links
-└── README.md # This file
-
+│
+├── Capture Moments(Local Deployment)/    # Local testing version of the app
+│   ├── static/                           # CSS, JS, image files
+│   ├── templates/                        # HTML templates (Jinja2)
+│   └── app.py                            # Flask app entry point
+│
+├── Capture Moments/                      # Main cloud-deployed version
+│   ├── static/                           # Cloud version static files
+│   ├── templates/                        # Cloud version HTML templates
+│   └── awsint.py                         # AWS-integrated Flask app
+│
+├── Videos/                               # Demonstration and tutorial videos
+│
+├── Document(CaptureMoments).docx         # Project documentation (ER, flow, etc.)
+│
+├── Google drive link                     # Plain text link to project drive (if needed)
+│
+└── README.md                             # Project description file (you are reading this)
 
 ---
 
